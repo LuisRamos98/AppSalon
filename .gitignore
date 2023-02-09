@@ -1,0 +1,6 @@
+src/
+node_modules/
+vendor/
+info.php
+insert bd/
+includes/config/credential.json
