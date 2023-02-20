@@ -27,14 +27,19 @@ class LoginController {
         
         $usuario = new Usuario;
 
+        //Alertas Vacías
+        $alertas = [];
+
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $usuario->sincronizar($_POST);
+            $alertas = $usuario->validarNuevaCuenta();
         }
 
 
         $router->render('auth/crear-cuenta', [
-            'usuario' => $usuario
+            'usuario' => $usuario,
+            'alertas' => $alertas
         ]);
     }
 }
