@@ -10,9 +10,11 @@ class CitaController {
         session_start();
 
         $nombre = $_SESSION['nombre'];
+        $id = $_SESSION['id'];
 
         $router->render("citas/index", [
-            'nombre' => $nombre
+            'nombre' => $nombre,
+            'id' => $id
         ]);
     }
 }
