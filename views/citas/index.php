@@ -1,6 +1,12 @@
 <h1 class="nombre-pagina">Crear Nueva Cita</h1>
 <p class="descripcion-pagina">Elige tus servicios a continuación</p>
 
+<div class="barra">
+    <p>Hola <?php echo $nombre ?? ''?></p>
+
+    <a href="/logout" class="boton">Cerrar Sesión</a>
+</div>
+
 <div class="app">
     <nav class="tabs">
         <button class="actual" type="button" data-paso="1">Servicios</button>
@@ -65,6 +71,7 @@
 
 <?php 
     $script = "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script src='build/js/app.js'></script>
     ";
 ?>

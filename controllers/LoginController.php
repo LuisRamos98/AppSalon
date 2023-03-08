@@ -30,8 +30,6 @@ class LoginController {
                         $_SESSION['email'] = $usuario->email;
                         $_SESSION['login'] = true;
 
-
-
                         //REDIRECCIONAMIENTO
                         if($usuario->admin) {
                             $_SESSION['admin'] = $usuario->admin ?? null;
@@ -40,7 +38,6 @@ class LoginController {
                             header('Location: /cita');
                         }
 
-                        
                     }
                 } else {
                     Usuario::setAlerta('error','Usuario no existe');
@@ -55,7 +52,12 @@ class LoginController {
     }
 
     public static function logout() {
-        echo "DESDE LOGOUT";
+        
+        session_start();
+
+        $_SESSION = [];
+
+        header('Location: /');
     }
 
     public static function olvide(Router $router) {

@@ -142,6 +142,8 @@ class ActiveRecord {
         $query .= join("', '", array_values($atributos));
         $query .= "') ";
 
+        // return ['query' => $query]; //ESTE CODIGO PERMITE DEBUGEAR CUANDO SE HACE FUNCION FETCH API 
+
         // Resultado de la consulta
         $resultado = self::$db->query($query);
         return [
