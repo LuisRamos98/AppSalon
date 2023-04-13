@@ -1,0 +1,1 @@
+function buscadorPorFecha(){document.querySelector("#fecha").addEventListener("input",(function(e){const n=e.target.value;window.location="?fecha="+n}))}document.addEventListener("DOMContentLoaded",(function(){buscadorPorFecha()}));
