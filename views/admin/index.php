@@ -22,6 +22,9 @@
 <div id="citas-admin">
     <ul class="citas">
         <?php 
+            if(count($citas)===0) {
+                echo "<h2>No hay citas en esta fecha</h2>";
+            }
             $idCita = 0;
             foreach($citas as $key => $cita): 
                 if($idCita !== $cita->id ):
@@ -48,7 +51,10 @@
                 ?>
                         
                         <p class="total">Total: <span><?php echo $total; ?></span></p>
-
+                        <form action="api/eliminar" method="POST">
+                            <input type="hidden" name="id" value="<?php echo $cita->id ?>">
+                            <input type="submit" class="boton-eliminar" value="Eliminar">
+                        </form>
                     <?php endif; ?>
         <?php endforeach; //FIN DEL FOREACH?> 
     </ul>

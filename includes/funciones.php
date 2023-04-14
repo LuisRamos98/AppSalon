@@ -20,6 +20,13 @@ function isAuth() :void {
     }
 }
 
+// Funcion que revisa si el usuario está autenticado
+function isAdmin() :void {
+    if(!isset($_SESSION['admin'])) {
+        header('Location: /');
+    }
+}
+
 //ES EL ULTIMO 
 function esUltimo($actual,$proximo) {
     if($actual !== $proximo) {
