@@ -4,3 +4,9 @@ vendor/
 info.php
 insert bd/
 includes/config/credential.json
+appsalon_mvc.sql
+gulpfile.js
+package.json
+package-lock.json
+.DS_Store
+.env
